@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Learning Task Selector</title>
+<link href="style.css" rel="stylesheet"/>
+</head>
+<body>
+<nav id="panel-nav">
+<button class="active" data-panel="admin">Admin</button>
+<button data-panel="input">Input Form</button>
+<button data-panel="ksh">KSH View</button>
+<button data-panel="gsa">GSA</button>
+<label style="margin-left:auto; display:flex; align-items:center; gap:0.5em; cursor:pointer;">
+<input id="dark-mode-toggle" type="checkbox"/>
+  🌙 Dark Mode
+</label>
+</nav>
+<div id="panels">
+<!-- ADMIN PANEL -->
+<div class="panel" id="panel-admin">
+<div style="display: flex; align-items: center; gap: 1em;; margin-bottom: 1em;">
+<h2 style="margin: 0;">Admin Panel</h2>
+<button id="save-all-btn">Save All Changes</button>
+</div>
+<div id="admin-table">Loading tasks...</div>
+</div>
+<!-- INPUT FORM PANEL -->
+<div class="panel hidden" id="panel-input">
+<h2>Add a New Task</h2>
+<form id="task-form">
+<label for="task_name">Task Name</label>
+<input name="task_name" required="" type="text"/>
+<label for="top_level">Top Level</label>
+<input name="top_level" required="" type="text"/>
+<label for="sub_level">Sub Level</label>
+<input name="sub_level" required="" type="text"/>
+<label for="software_version">Software Version</label>
+<input name="software_version" required="" type="text"/>
+<label for="learning_version">Learning Version</label>
+<input name="learning_version" required="" type="text"/>
+<label for="branding_version">Branding Version</label>
+<input name="branding_version" required="" type="text"/>
+<label for="product">Product</label>
+<input name="product" required="" type="text"/>
+<label for="hypervisor_support">Hypervisor Support</label>
+<input name="hypervisor_support" required="" type="text"/>
+<label for="audience">Audience</label>
+<select name="audience" required="">
+<option value="">Select audience</option>
+<option value="Admin">Admin</option>
+<option value="User">User</option>
+<option value="Partner">Partner</option>
+</select>
+<label for="competence_subcategory">Competence Subcategory</label>
+<input name="competence_subcategory" required="" type="text"/>
+<label for="compliance_status">Compliance Status</label>
+<select name="compliance_status" required="">
+<option value="">Select compliance status</option>
+<option value="Compliant">Compliant</option>
+<option value="Non-Compliant">Non-Compliant</option>
+<option value="Unknown">Unknown</option>
+</select>
+<label for="task_status">Task Status</label>
+<select name="task_status" required="">
+<option value="">Select task status</option>
+<option value="Draft">Draft</option>
+<option value="Published">Published</option>
+<option value="Deprecated">Deprecated</option>
+</select>
+<label for="learning_object_link">Learning Object Link</label>
+<input name="learning_object_link" required="" type="text"/>
+<label for="estimated_completion_time">Estimated Completion Time (hours)</label>
+<input min="1" name="estimated_completion_time" required="" type="number"/>
+<label for="seat_time_mins">Seat Time (minutes)</label>
+<input min="1" name="seat_time_mins" required="" type="number"/>
+<button style="margin-top: 1em;" type="submit">Add Task</button>
+<p id="form-message" style="margin-top: 1em;"></p>
+</form>
+</div>
+<div class="panel hidden" id="panel-ksh">
+<div style="display: flex; gap: 2em;">
+<!-- Task Tree (Left) -->
+<div id="task-list" style="flex: 3;"></div>
+<!-- Fixed Summary Panel (Right) -->
+<div id="summary-panel">
+<h3>📊 Summary</h3>
+<div id="summary"></div>
+<button id="submit-ksh-btn" style="margin-top: 1em;">Submit Selection</button>
+</div>
+</div>
+</div>
+</div>
+<div class="panel hidden" id="panel-gsa">
+<h2 style="font-size: 1.5rem; margin-bottom: 0.5em;">📋 Non-Compliant Task Summary</h2>
+<div id="gsa-content"></div>
+<button id="gsa-download-btn">Download CSV</button>
+</div>
+<script src="scripts.js" type="module"></script>
+</body>
+</html>
