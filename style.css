@@ -34,3 +34,31 @@ body.dark-mode #submit-ksh-btn:hover {
   border-color: var(--secondary-color);
   color: #fff;
 }
+
+/* === GSA "View" links use button style === */
+#gsa-content a {
+  background-color: var(--primary-color);
+  color: white;
+  text-decoration: none;
+  padding: 6px 12px;
+  border-radius: 5px;
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border: 2px solid var(--secondary-color);
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+#gsa-content a:hover {
+  background-color: var(--secondary-color);
+  border-color: var(--primary-color);
+}
+
+/* === GSA row striping fix for dark mode === */
+body.dark-mode #gsa-content tr:nth-child(even) {
+  background-color: #2a2a2a;
+}
+
+body.dark-mode #gsa-content tr:nth-child(odd) {
+  background-color: #1e1e1e;
+}
